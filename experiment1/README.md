@@ -1,10 +1,10 @@
 ## 📁ファイル構成
 - それぞれのフォルダには、各処理区のプログラムと配線図があります。
-    - 1_タイマー区
-    - 2_日射句
-    - 3_通常区
-    - 4_EC区
-    - 温湿度気圧計
+    - 1_timer area（タイマー区）
+    - 2_solar radiation area（日射句）
+    - 3_soil moisture area（通常区）
+    - 4_ec soil moisture area（EC区）
+    - thermometer（温湿度気圧計）
 - 各処理区を作るための部品内訳と費用は、"Cost_of_each_area.pdf" に記載しています。
 
 ## 🧑‍💻プログラム
@@ -68,10 +68,10 @@
 - 潅水後30分間は、潅水しない
 
 **farm-area3.ino**
-- SEN0193を測定し、それぞれanalogread()の値が1000を超えていたら正常に測定できたと判断して測定対象にし、平均値・体積含水率を算出する
-- 体積含水率が閾値を下回っていて、かつ前回の潅水から30分以上経過していたら(irrigation_countdown==0)潅水する
-- Ambientにpostする
-- SENSING_INTERVALに定義した時間の分だけdelay()
+1. SEN0193を測定し、それぞれanalogread()の値が1000を超えていたら正常に測定できたと判断して測定対象にし、平均値・体積含水率を算出する
+2. 体積含水率が閾値を下回っていて、かつ前回の潅水から30分以上経過していたら(irrigation_countdown==0)潅水する
+3. Ambientにpostする
+4. SENSING_INTERVALに定義した時間の分だけdelay()
 
 **配線図**<br>
 <img height="300" alt="wiring_area3.png" src="./3_soil moisture area/wiring_area3.png">
@@ -86,11 +86,11 @@
 - 閾値はGoogle Sheetsからユーザが変更できる（本実験中は33%のまま変更することはなかった）
 
 **farm-area4.ino**
-- LM393, SEN0193の順に測定、それぞれanalogread()の値が1000を超えていたら正常に測定できたと判断して測定対象にし、平均値・体積含水率を算出する
-- Google Sheetsから閾値を取得する。このとき、まずタイマー区のRaspiが閾値を取得してサーバを立て、閾値を返せるように準備しており（farm_area4_server.py）、EC区のESP32からリクエストを送って取得する
-- 体積含水率が閾値を下回っていて、かつ前回の潅水から30分以上経過していたら(irrigation_countdown==0)潅水する
-- Ambientにpostする
-- SENSING_INTERVALに定義した時間の分だけdelay()
+1. LM393, SEN0193の順に測定、それぞれanalogread()の値が1000を超えていたら正常に測定できたと判断して測定対象にし、平均値・体積含水率を算出する
+2. Google Sheetsから閾値を取得する。このとき、まずタイマー区のRaspiが閾値を取得してサーバを立て、閾値を返せるように準備しており（farm_area4_server.py）、EC区のESP32からリクエストを送って取得する
+3. 体積含水率が閾値を下回っていて、かつ前回の潅水から30分以上経過していたら(irrigation_countdown==0)潅水する
+4. Ambientにpostする
+5. SENSING_INTERVALに定義した時間の分だけdelay()
 
 **配線図**<br>
 <img height="300" alt="wiring_area4.png" src="./4_ec soil moisture area/wiring_area4.png">
@@ -102,9 +102,9 @@
 - 温度・湿度・気圧を毎分測定する
 
 **thermometer.ino**
-- 温度・湿度・気圧をI2C通信で測定する
-- Ambientにpostする
-- SENSING_INTERVALに定義した時間の分だけdelay()
+1. 温度・湿度・気圧をI2C通信で測定する
+2. Ambientにpostする
+3. SENSING_INTERVALに定義した時間の分だけdelay()
 
 **配線図**<br>
 <img height="300" alt="wiring_thermometer.png" src="./thermometer/wiring_thermometer.png">
