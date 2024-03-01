@@ -78,8 +78,6 @@ def irrigation():
     GPIO.output(LED_PIN_R, 0)
     GPIO.output(LED_PIN_G, 1)
     GPIO.output(LED_PIN_B, 0)
-    
-    #GPIO.cleanup(relay_pin) # free
 
 
 def main():
