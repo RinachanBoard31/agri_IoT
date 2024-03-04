@@ -36,6 +36,7 @@
 
 **配線図**<br>
 <img height="300" alt="wiring_area1.png" src="./1_timer area/wiring_area1.png">
+<br>LEDを保護するため、抵抗を挟むことをお勧めします。
 
 ---
 
