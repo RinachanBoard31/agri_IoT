@@ -8,8 +8,8 @@
 - 各処理区を作るための部品内訳と費用は、"Cost_of_each_area.pdf" に記載しています。
 
 ## 🎥解説動画
-- 通常区について、導入方法を下記動画で解説しています。
-[![解説動画]('')](https://www.youtube.com/watch?v=40p7tEoAiwA)
+- 通常区について、導入方法を下記動画で解説しています。<br>
+[![解説動画](https://github.com/RinachanBoard31/agri_IoT/assets/85539269/cb190786-8074-4411-a2eb-3365755215a1)](https://www.youtube.com/watch?v=40p7tEoAiwA)
 
 ## 🧑‍💻プログラム
 ### 共通LED設定
