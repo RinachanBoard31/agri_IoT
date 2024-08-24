@@ -16,7 +16,7 @@
 #define SENSING_INTERVAL 1000 * 60     // この間隔で潅水状況をチェック
 #define IRRIGATION_TIME 1000 * 60 * 5  // 潅水時間
 #define IRRIGATION_WAIT 30             // この時間だけ前回の灌水から開ける(分)
-float THRESHOLD = 33.0;                // この値よりも小さくなったら潅水(%)
+float THRESHOLD = 32.0;                // この値よりも小さくなったら潅水(%)
 
 int irrigation_countdown = 0;          // 一度灌水したら30分間灌水しないようにする; 毎回のloop()で1ずつ減らす
 

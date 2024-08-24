@@ -16,7 +16,7 @@
 #define SERIAL_BAND 115200
 #define JST 3600*9
 
-float THRESHOLD = 33.0;                // この値よりも大きくなったら潅水; area3と異なり更新することがあるのでdefineしない
+float THRESHOLD = 31.0;                // この値よりも大きくなったら潅水; area3と異なり更新することがあるのでdefineしない
 #define SENSING_INTERVAL 1000 * 60     // この間隔で潅水状況をチェック
 #define IRRIGATION_TIME 1000 * 60 * 5  // 潅水時間
 #define IRRIGATION_WAIT 30             // この時間だけ前回の灌水から開ける(分)
