@@ -2,13 +2,13 @@
 - それぞれのフォルダには、各処理区のプログラムと配線図があります。
     - 1_timer area（タイマー区）
     - 2_solar radiation area（日射句）
-    - 3_soil moisture area（通常区）
+    - 3_soil moisture area（水分センサ区）
     - 4_ec soil moisture area（EC区）
     - thermometer（温湿度気圧計）
 - 各処理区を作るための部品内訳と費用は、"Cost_of_each_area.pdf" に記載しています。
 
 ## 🎥解説動画
-- 通常区について、導入方法を下記動画で解説しています。（画像をクリックするとYouTubeに飛びます）<br>
+- 水分センサ区について、導入方法を下記動画で解説しています。（画像をクリックするとYouTubeに飛びます）<br>
 <a href="https://www.youtube.com/watch?v=40p7tEoAiwA">
     <img src="https://github.com/RinachanBoard31/agri_IoT/assets/85539269/cb190786-8074-4411-a2eb-3365755215a1" alt="解説動画" height="300">
 </a>
@@ -68,7 +68,7 @@
 
 ---
 
-### 3_通常区
+### 3_水分センサ区
 **概要**
 - SEN0193をそれぞれ3つのメロンに用いて体積含水率の平均値を算出する
 - 体積含水率が、33%を下回ったとき5分間潅水する
@@ -90,7 +90,7 @@
 - SEN0193, LM393をそれぞれ3つのメロンに用いて体積含水率の平均値を算出する
 - 体積含水率が、33%を下回ったとき5分間潅水する
 - 潅水後30分間は、潅水しない
-- 閾値はGoogle Sheetsからユーザが変更できる（本実験中は33%のまま変更することはなかった）
+- 閾値はGoogle Sheetsからユーザが変更できる
 
 **farm-area4.ino**
 1. LM393, SEN0193の順に測定、それぞれanalogread()の値が1000を超えていたら正常に測定できたと判断して測定対象にし、平均値・体積含水率を算出する
